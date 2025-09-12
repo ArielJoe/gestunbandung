@@ -20,14 +20,14 @@ export default function About() {
             <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-primary-blue mb-6">
               Gesek Tunai Bandung – Jasa Pencairan Limit Kartu Kredit
             </h1>
-            <p className="text-black mb-4 text-base sm:text-lg leading-relaxed">
+            <p className="text-black mb-4 text-base sm:text-lg leading-relaxed text-justify">
               <strong>Gestun Bandung</strong> adalah layanan{" "}
               <em>gesek tunai kartu kredit</em> yang membantu Anda mencairkan
               limit kartu kredit dalam bentuk uang tunai. Kami menerima{" "}
               <strong>gestun fisik</strong> konvensional dengan proses cepat,
               aman, dan terpercaya untuk semua pemilik kartu kredit.
             </p>
-            <p className="text-black text-base sm:text-lg leading-relaxed">
+            <p className="text-black text-base sm:text-lg leading-relaxed text-justify">
               Sebagai <strong>solusi keuangan di Bandung</strong>, kami hadir
               untuk memberikan kemudahan bagi Anda yang membutuhkan dana darurat
               atau tambahan modal. Dengan pelayanan profesional,{" "}
@@ -44,13 +44,13 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-primary-blue mb-6">
               Apa Itu Gestun (Gesek Tunai)?
             </h2>
-            <p className="text-black mb-4 text-base sm:text-lg leading-relaxed">
+            <p className="text-black mb-4 text-base sm:text-lg leading-relaxed text-justify">
               <strong>Gestun (gesek tunai)</strong> adalah metode pencairan uang
               dengan kartu kredit selain tarik tunai melalui ATM. Proses ini
               telah menjadi solusi populer di kalangan pemilik kartu kredit yang
               membutuhkan dana cepat tanpa ribet.
             </p>
-            <p className="text-black text-base sm:text-lg leading-relaxed">
+            <p className="text-black text-base sm:text-lg leading-relaxed text-justify">
               Cukup dengan mendatangi gerai kami di Bandung, Anda dapat langsung
               mencairkan dana menggunakan kartu kredit melalui proses{" "}
               <em>gesek tunai</em> dengan aman, cepat, dan profesional.
