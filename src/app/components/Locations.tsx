@@ -3,8 +3,19 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
+// Define the type for a location
+type Location = {
+  name: string;
+  address: string;
+  image: string;
+  mapEmbed: string;
+  mapLink: string;
+};
+
 export default function Locations() {
-  const [selectedLocation, setSelectedLocation] = useState<any | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<Location | null>(
+    null
+  );
 
   // Prevent background scroll when modal is open
   useEffect(() => {
