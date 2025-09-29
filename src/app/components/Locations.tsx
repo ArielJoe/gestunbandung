@@ -34,8 +34,9 @@ export default function Locations() {
           {locations.map((location, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md overflow-hidden"
+              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
             >
+              {/* Gambar */}
               <div className="relative w-full h-64 md:h-72">
                 <Image
                   src={location.image}
@@ -45,21 +46,24 @@ export default function Locations() {
                 />
               </div>
 
-              <a
-                href={location.mapLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 block md:flex items-center justify-between focus:outline-none"
-                aria-label={`Lihat lokasi ${location.name} di Google Maps`}
-              >
-                <h3 className="text-lg md:text-xl font-bold text-gray-800 truncate">
+              {/* Konten bawah */}
+              <div className="p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+                <h3 className="text-lg md:text-xl font-bold text-gray-800 truncate w-full md:w-auto">
                   {location.name}
                 </h3>
-                <span className="flex items-center text-primary-blue font-bold text-sm md:text-base">
-                  <FaSearch className="mr-2" />
+
+                {/* Tombol anchor */}
+                <a
+                  href={location.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Lihat lokasi ${location.name} di Google Maps`}
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-[var(--primary-black)] text-white font-bold text-sm md:text-base w-full md:w-auto text-center"
+                >
+                  <FaSearch className="text-sm md:text-base" />
                   <span>Pelajari Lebih Lanjut</span>
-                </span>
-              </a>
+                </a>
+              </div>
             </div>
           ))}
         </div>
