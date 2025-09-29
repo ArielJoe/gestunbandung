@@ -42,14 +42,14 @@ export default function Header() {
         <div className="hidden md:flex space-x-8 text-black font-semibold text-lg">
           {[
             { id: "about", label: "Tentang Kami", offset: 110 },
-            { id: "adv", label: "Keunggulan", offset: 80 },
+            { id: "adv", label: "Keunggulan", offset: 90 },
             { id: "review", label: "Review", offset: 115 },
-            { id: "loc", label: "Lokasi", offset: 90 },
+            { id: "loc", label: "Lokasi", offset: 80 },
           ].map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id, item.offset)}
-              className="hover:bg-[var(--secondary-blue)] hover:text-white transition-colors px-4 py-2 rounded-md"
+              className="cursor-pointer hover:bg-[var(--secondary-blue)] hover:text-white transition-colors px-4 py-2 rounded-md"
             >
               {item.label}
             </button>
@@ -57,7 +57,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={toggleSidebar}>
+        <button className="md:hidden cursor-pointer" onClick={toggleSidebar}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-7 w-7"
@@ -85,29 +85,31 @@ export default function Header() {
       </div>
 
       {/* Mobile Dropdown */}
-      {isSidebarOpen && (
-        <div className="md:hidden bg-white shadow-md">
-          <div className="flex flex-col space-y-5 p-6 text-lg font-semibold">
-            {[
-              { id: "about", label: "Tentang Kami", offset: 100 },
-              { id: "adv", label: "Keunggulan", offset: 90 },
-              { id: "review", label: "Review", offset: 115 },
-              { id: "loc", label: "Lokasi", offset: 85 },
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  toggleSidebar();
-                  scrollToSection(item.id, item.offset);
-                }}
-                className="text-left text-black hover:bg-[var(--secondary-blue)] hover:text-white transition-colors py-2 px-3 rounded-md"
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+      <div
+        className={`md:hidden bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+          isSidebarOpen ? "max-h-96" : "max-h-0"
+        }`}
+      >
+        <div className="flex flex-col space-y-3 p-6 text-lg font-semibold">
+          {[
+            { id: "about", label: "Tentang Kami", offset: 100 },
+            { id: "adv", label: "Keunggulan", offset: 95 },
+            { id: "review", label: "Review", offset: 115 },
+            { id: "loc", label: "Lokasi", offset: 85 },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                scrollToSection(item.id, item.offset);
+                toggleSidebar();
+              }}
+              className="cursor-pointer text-left text-black hover:bg-[var(--secondary-blue)] hover:text-white transition-colors py-3 px-4 rounded-md"
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 }
